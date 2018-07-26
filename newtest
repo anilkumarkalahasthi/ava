@@ -1,0 +1,16 @@
+<?php
+//$inFile = $_SERVER['DOCUMENT_ROOT'].'/anil/pardeep.jpg';
+$filename = $_SERVER['DOCUMENT_ROOT'].'/anil/458339-milkha-singh.jpg';
+$image = new Imagick($filename);
+$width=$image->getImageWidth();
+$height=$image->getImageHeight();
+echo $width_new=$width*0.5;
+echo $height_new=$height*0.5;
+
+    $imagick->resampleImage($width_new, $height_new, Imagick::FILTER_LANCZOS, 1);
+    header("Content-Type: image/jpg");
+    echo $imagick->getImageBlob();
+
+
+
+?>
